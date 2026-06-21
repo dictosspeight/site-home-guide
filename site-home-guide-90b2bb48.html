@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 资料整合与信息索引</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif CN', serif;
+            background-color: #f8f5f0;
+            color: #2c2c2c;
+            line-height: 1.75;
+            padding: 0 1.5rem;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3rem 0 5rem;
+        }
+        /* hero — 克制的标题区 */
+        .hero {
+            border-left: 4px solid #b89a7a;
+            padding-left: 1.6rem;
+            margin-bottom: 2.8rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #3d3d3d;
+            margin-bottom: 0.4rem;
+        }
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #6f6f6f;
+            letter-spacing: 0.03em;
+        }
+
+        /* 正文区块 */
+        section {
+            margin-bottom: 2.6rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4b3b2c;
+            border-bottom: 1px solid #ddd6cb;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        /* 引用框 / 提示块 */
+        .note-box {
+            background: #ede7dd;
+            border-left: 6px solid #b89a7a;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0 2rem;
+            font-size: 0.97rem;
+            color: #3a3a3a;
+            border-radius: 0 6px 6px 0;
+        }
+        .note-box strong {
+            color: #4b3b2c;
+        }
+
+        /* 卡片式特点列表 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.4rem 0 1.8rem;
+        }
+        .feature-item {
+            flex: 1 1 200px;
+            background: #ffffffd9;
+            padding: 1.2rem 1rem 1rem 1.3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e6dfd4;
+        }
+        .feature-item .icon {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .feature-item h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #3b3b3b;
+            margin-bottom: 0.3rem;
+        }
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* 使用建议列表 */
+        .use-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.4rem;
+        }
+        .use-list li {
+            padding: 0.45rem 0 0.45rem 1.6rem;
+            position: relative;
+            border-bottom: 1px dashed #e0d8cc;
+        }
+        .use-list li::before {
+            content: "•";
+            color: #b89a7a;
+            font-weight: bold;
+            position: absolute;
+            left: 0.2rem;
+        }
+
+        /* FAQ 摘要 — 紧凑布局 */
+        .faq-mini {
+            margin-top: 1.8rem;
+        }
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+            border: 1px solid #e3dbcf;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background: #fcfaf7;
+        }
+        .faq-mini summary {
+            font-weight: 500;
+            color: #4b3b2c;
+            cursor: pointer;
+        }
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem;
+            font-size: 0.93rem;
+            color: #4a4a4a;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #7a5d3f;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 0.5px;
+        }
+        a:hover {
+            color: #af8a64;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ddd6cb;
+            font-size: 0.85rem;
+            color: #7a7a7a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body { padding: 0 1rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .feature-item { flex: 1 1 100%; }
+            .note-box { padding: 1rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero 区：以索引定位切入 -->
+    <div class="hero">
+        <h1>爱游戏 · 资料索引</h1>
+        <div class="sub">从信息整理出发，构建可溯源的游戏内容参考</div>
+    </div>
+
+    <!-- 摘要式介绍 -->
+    <section>
+        <p><a href="https://site-home-i-game.com.cn">爱游戏</a> 是一个侧重游戏资料整理与信息索引的站点。内容涵盖作品背景、版本沿革、机制说明以及相关的社区讨论归档。站内条目以可查证、可追溯为基本组织原则，不依赖主观评价，而是通过结构化的信息节点帮助使用者建立对游戏内容的基础认知。</p>
+        <p>目前收录范围以中文互联网流通资料为主，兼顾部分外文来源的摘要翻译。每个条目均标注参考出处与更新时间，便于进一步交叉验证。</p>
+    </section>
+
+    <!-- 亮点：用卡片呈现特点 -->
+    <section>
+        <h2>整理特点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="icon">📇</div>
+                <h3>条目化结构</h3>
+                <p>每款游戏独立页面，包含版本、剧情、系统、媒体资料等分节，方便定位具体信息。</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔗</div>
+                <h3>来源附注</h3>
+                <p>重要数据、引文均标注原始链接或出版物信息，降低二手转述的失真风险。</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">📂</div>
+                <h3>分类聚合</h3>
+                <p>按年代、类型、平台等多维度标签交叉索引，适应不同查询习惯。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用建议 (带有引用框风格) -->
+    <section>
+        <h2>查阅建议</h2>
+        <div class="note-box">
+            <strong>提示：</strong> 使用站内搜索或分类标签可快速缩小范围。若需引用页面内容，建议直接核对原始出处链接。
+        </div>
+        <ul class="use-list">
+            <li>优先通过游戏官方名称（中/英文）定位条目，避免别名歧义。</li>
+            <li>版本更新记录、补丁说明等时效性较强的信息，页面会标注最后核对日期。</li>
+            <li>社区讨论归档仅作背景参考，不代表站方立场。</li>
+            <li>部分外文资料附有简要翻译，但以原文为准。</li>
+        </ul>
+    </section>
+
+    <!-- 场景举例 —— 用克制的语气说明适用范围 -->
+    <section>
+        <h2>适用场景</h2>
+        <p>适合在以下情况下使用 <a href="https://site-home-i-game.com.cn">爱游戏</a> 进行资料查询：需要了解某款游戏的基础设定与开发背景；对比不同版本的更迭内容；寻找社区讨论的原始线索；或作为进一步深入研究的出发点。不适用于实时攻略、数值计算或商业决策。</p>
+    </section>
+
+    <!-- FAQ 摘要 (两个问题) -->
+    <section class="faq-mini">
+        <h2>常见问题 · 摘要</h2>
+        <details>
+            <summary>信息准确性如何保障？</summary>
+            <p>每个条目均列出参考来源（包括官方文档、媒体评测、开发者访谈等）。站内不生产一手数据，而是整理和索引。用户可自行点击来源链接核实。</p>
+        </details>
+        <details>
+            <summary>内容更新频率如何？</summary>
+            <p>随新游戏发布或已知条目补充不定期更新。页面头部标注最后修改日期，无固定排期。建议关注站内更新日志页面获取变动摘要。</p>
+        </details>
+    </section>
+
+    <!-- 简洁的访问说明 (融入正文) -->
+    <div class="note-box" style="margin-top: 2rem;">
+        <strong>关于访问：</strong> 本站为静态信息页面，无需注册或登录。所有公开内容均可直接浏览。若在查阅过程中发现缺漏或链接失效，可通过站内反馈渠道提交信息（处理周期不定）。
+    </div>
+
+    <div class="footer-note">
+        <p>基于公开资料整理 · 不作为投资、法律或医疗建议 · 内容仅供参考</p>
+    </div>
+</div>
+</body>
+</html>

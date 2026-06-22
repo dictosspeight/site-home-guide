@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷火电竞 · 稳定入口与平台说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+            background-color: #f5f7fc;
+            line-height: 1.7;
+            color: #1f2937;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图 hero */
+        .hero {
+            background: linear-gradient(135deg, #0b1122 0%, #1a2438 50%, #0f1b2e 100%);
+            color: #e8edf5;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #5b7ed6, #3c67c0, #5b7ed6);
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 640px;
+            margin: 0.6rem auto 0;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            margin-top: 1.2rem;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1.6rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #b3c2e0;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            flex: 1;
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin: 2.2rem 0 1rem;
+            border-left: 4px solid #3c67c0;
+            padding-left: 1rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #2b5bbf;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            color: #0f3b8c;
+            border-bottom-color: #2b5bbf;
+        }
+
+        /* 强调色用于链接（已体现在 a 标签） */
+        .highlight-box {
+            background: #f0f4fe;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #3c67c0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .feature-card {
+            background: #fafcff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.4rem 1.4rem 1.6rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .feature-card h3::before {
+            content: '·';
+            color: #3c67c0;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-right: 0.2rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #dee4ed;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-a {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            border: 1.5px solid #2b5bbf;
+            border-radius: 30px;
+            color: #2b5bbf;
+            background: transparent;
+            font-size: 0.95rem;
+            transition: all 0.25s;
+            text-decoration: none;
+            border-bottom: 1.5px solid #2b5bbf;
+            margin-top: 0.6rem;
+        }
+
+        .btn-outline:hover {
+            background: #2b5bbf;
+            color: #ffffff;
+            border-color: #2b5bbf;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            background: #f5f7fc;
+            color: #6b7a93;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        footer a {
+            color: #4b6cb7;
+            font-weight: 400;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .content {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .highlight-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .hero {
+                padding: 3.5rem 1rem 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>雷火电竞 · 稳定入口与平台说明</h1>
+        <p>信息交互、赛事浏览与社区聚合，从一个清晰可靠的起点开始。</p>
+        <span class="tagline">产品说明式 · 轻量概览</span>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <main class="content">
+
+        <!-- 摘要 -->
+        <h2 class="section-title">为什么需要稳定的入口</h2>
+        <p>无论是快速浏览赛事动态，还是查找选手数据与赛程安排，一个指向明确、结构稳定的站点入口都能减少不必要的跳转损耗。<a href="https://lhdj-esports.com">雷火电竞</a>作为信息聚合与互动平台的载体，其访问路径与页面编排直接影响日常使用体验。本页从产品视角梳理平台特点与使用建议，帮助新用户快速建立认知框架。</p>
+
+        <!-- 亮点（卡片） -->
+        <h2 class="section-title">平台亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>实时数据整合</h3>
+                <p>赛程、积分、选手数据多维度实时更新，减少信息分散带来的反复查找，让关注点回归比赛本身。</p>
+            </div>
+            <div class="feature-card">
+                <h3>清晰的结构布局</h3>
+                <p>首页与子页面采用模块化分区，重要内容（赛事预告、热门战队、历史战绩）均可在3次点击内触达。</p>
+            </div>
+            <div class="feature-card">
+                <h3>多终端适配</h3>
+                <p>无论桌面端或移动端，页面布局与交互控件均进行针对性优化，保持浏览与操作的连续性。</p>
+            </div>
+            <div class="feature-card">
+                <h3>社区与资讯融合</h3>
+                <p>赛事资讯与用户讨论区并列呈现，方便在同一页面内完成“阅读 – 交流”闭环，无需频繁切换标签页。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议（场景） -->
+        <h2 class="section-title">使用建议 · 常见场景</h2>
+        <div class="highlight-box">
+            <p><strong>日常关注：</strong>将 <a href="https://lhdj-esports.com">雷火电竞</a> 添加至浏览器书签或移动端主屏幕，作为每日查看赛程、比分与资讯的固定起点。平台首页默认展示最近3日重点赛事，免去手动筛选。</p>
+            <p><strong>深度浏览：</strong>使用站内“赛事日历”筛选过去与未来场次；对特定队伍感兴趣时，可直接从战队主页查看历史交锋记录与选手数据。</p>
+            <p><strong>快速定位：</strong>若遇到页面内容更新延迟，可尝试刷新或清除浏览器缓存，多数情况下即可恢复最新数据。</p>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <h2 class="section-title">关于访问与可信说明</h2>
+        <p>本平台所提供的赛事信息、数据均来自公开赛事记录与合作数据源，页面内容力求准确、及时，但鉴于电竞赛事排期动态调整，建议用户以官方赛事公告为最终依据。平台不参与任何形式的投注或博彩引导，仅作为信息展示与社区交流空间。</p>
+        <p>访问 <a href="https://lhdj-esports.com">雷火电竞</a> 时，建议使用主流浏览器（Chrome、Firefox、Safari、Edge）并保持版本更新，以获得最佳渲染与安全体验。平台不主动收集敏感个人数据，常规访问无需注册即可浏览大部分公开内容。</p>
+
+        <!-- FAQ 摘要（简洁，2-3条） -->
+        <h2 class="section-title">常见疑问摘录</h2>
+        <div class="faq-item">
+            <div class="faq-q">▪ 页面加载缓慢或部分内容未显示，如何解决？</div>
+            <div class="faq-a">首先检查网络连接；其次尝试清除浏览器缓存或使用无痕模式访问。若问题持续，可稍后再试——部分资源可能因CDN刷新出现短暂延迟。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">▪ 是否需要注册才能浏览赛事数据？</div>
+            <div class="faq-a">不需要。赛程、积分、选手基础数据在站内以公开形式展示，注册仅用于互动功能（如评论、收藏），非强制。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">▪ 移动端与桌面端功能是否一致？</div>
+            <div class="faq-a">核心浏览功能一致，但移动端针对触摸操作优化了导航与筛选控件，部分复杂数据表格以轮播或折叠形式呈现，不影响信息获取。</div>
+        </div>
+
+        <!-- 温和引导（无强制） -->
+        <div style="margin-top: 2.2rem; text-align: center; padding: 0.6rem 0;">
+            <span style="color: #64748b; font-size: 0.95rem;">若想进一步了解平台结构与赛事信息，可前往</span>
+            <a href="https://lhdj-esports.com" style="border-bottom: 1px solid #2b5bbf; padding-bottom: 1px; margin-left: 4px;">雷火电竞</a>
+            <span style="color: #64748b; font-size: 0.95rem;"> 浏览相关内容。</span>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>本页为产品说明与入口介绍 · 内容仅供参考，不构成任何形式的使用承诺。</p>
+        <p style="margin-top: 0.5rem;">访问 <a href="https://lhdj-esports.com">雷火电竞</a> 获取最新赛事信息。</p>
+    </footer>
+
+</body>
+</html>
